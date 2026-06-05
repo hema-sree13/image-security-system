@@ -190,12 +190,12 @@ def detect_manipulation(image):
     )
     results['final_score'] = final_score
 
-    if final_score < 20:
+    if final_score < 15:
         results['verdict'] = 'AUTHENTIC'
         results['confidence'] = round(100 - final_score, 1)
         results['color'] = 'real'
         results['emoji'] = '✅'
-    elif final_score < 55:
+    elif final_score < 99:
         results['verdict'] = 'UNCERTAIN'
         results['confidence'] = round(70 - abs(final_score - 42), 1)
         results['color'] = 'uncertain'
